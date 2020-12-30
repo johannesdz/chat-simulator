@@ -1,7 +1,7 @@
 <template>
   <div class="flex items-center justify-center h-screen bg-blue-50">
     <div class="relative flex flex-col w-full h-full text-white bg-gray-700 shadow-xl sm:rounded sm:max-w-lg sm:h-5/6">
-      <div class="relative flex items-center justify-between">
+      <div class="absolute top-0 left-0 right-0 z-30 flex items-center justify-between bg-gray-700">
         <!-- <div
           class="flex p-1 transition transform scale-100 rounded-full cursor-pointer hover:scale-125 hover:text-white hover:shadow-inner"
           @click="handleNaviClick"

@@ -30,9 +30,11 @@
     <div
       :class="[
         messageRef.member.color === 'gray' ? 'bg-gray-900' : '',
+        messageRef.member.color === 'blueGray' ? 'bg-blueGray-900' : '',
         messageRef.member.color === 'rose' ? 'bg-rose-900' : '',
         messageRef.member.color === 'fuchsia' ? 'bg-fuchsia-900' : '',
         messageRef.member.color === 'violet' ? 'bg-violet-900' : '',
+        messageRef.member.color === 'blue' ? 'bg-blue-900' : '',
         messageRef.member.color === 'cyan' ? 'bg-cyan-900' : '',
         messageRef.member.color === 'emerald' ? 'bg-emerald-900' : '',
         messageRef.member.color === 'lime' ? 'bg-lime-900' : '',
@@ -46,9 +48,11 @@
         v-if="messageRef.member"
         :class="[
           messageRef.member.color === 'gray' ? 'border-gray-900' : '',
+          messageRef.member.color === 'blueGray' ? 'border-blueGray-900' : '',
           messageRef.member.color === 'rose' ? 'border-rose-900' : '',
           messageRef.member.color === 'fuchsia' ? 'border-fuchsia-900' : '',
           messageRef.member.color === 'violet' ? 'border-violet-900' : '',
+          messageRef.member.color === 'blue' ? 'border-blue-900' : '',
           messageRef.member.color === 'cyan' ? 'border-cyan-900' : '',
           messageRef.member.color === 'emerald' ? 'border-emerald-900' : '',
           messageRef.member.color === 'lime' ? 'border-lime-900' : '',
@@ -94,9 +98,11 @@
         <div
           :class="[
             messageRef.member.color === 'gray' ? 'border-gray-900' : '',
+            messageRef.member.color === 'blueGray' ? 'border-blueGray-900' : '',
             messageRef.member.color === 'rose' ? 'border-rose-900' : '',
             messageRef.member.color === 'fuchsia' ? 'border-fuchsia-900' : '',
             messageRef.member.color === 'violet' ? 'border-violet-900' : '',
+            messageRef.member.color === 'blue' ? 'border-blue-900' : '',
             messageRef.member.color === 'cyan' ? 'border-cyan-900' : '',
             messageRef.member.color === 'emerald' ? 'border-emerald-900' : '',
             messageRef.member.color === 'lime' ? 'border-lime-900' : '',

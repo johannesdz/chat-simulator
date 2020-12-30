@@ -1,7 +1,7 @@
 <template>
   <ImageUploadWrapper
     :class="[
-      'border-2 border-dashed rounded-t',
+      'border-2 border-dashed rounded-t absolute bottom-0 left-0 right-0 bg-gray-700',
       isDragRef ? 'border-gray-400' : 'border-gray-700'
     ]"
     :open-file-upload="openFileUploadRef"

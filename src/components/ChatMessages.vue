@@ -1,5 +1,5 @@
 <template>
-  <div class="relative flex-grow p-3 m-px overflow-y-auto text-gray-900 bg-white shadow-inner bg-chat-background">
+  <div class="relative flex-grow p-3 pt-4 m-px mt-16 overflow-y-auto text-gray-900 bg-white shadow-inner bg-chat-background">
     <ChatMessagesItem
       v-for="message in messagesRef"
       :key="message.id"
