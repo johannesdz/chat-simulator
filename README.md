@@ -1,6 +1,9 @@
 # Chat simulator
 Simulate a chat conversation with your friends and colleagues easily in your browser
 
+## Demo
+https://chat-simulator.com/
+
 ## Used technologies
 * Vue CLI: https://cli.vuejs.org/
 * Vue 3 with composition api: https://v3.vuejs.org/
