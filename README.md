@@ -1,4 +1,4 @@
-# chat-simulator
+# Chat simulator
 Simulate a chat conversation with your friends and colleagues easily in your browser
 
 ## Used technologies
