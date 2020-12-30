@@ -42,7 +42,24 @@
         >
           <div
             :class="[
-              `bg-${memberColorRef}-900 border-${memberColorRef}-900`,
+              memberColorRef === 'gray' ? 'bg-gray-900' : '',
+              memberColorRef === 'rose' ? 'bg-rose-900' : '',
+              memberColorRef === 'fuchsia' ? 'bg-fuchsia-900' : '',
+              memberColorRef === 'violet' ? 'bg-violet-900' : '',
+              memberColorRef === 'cyan' ? 'bg-cyan-900' : '',
+              memberColorRef === 'emerald' ? 'bg-emerald-900' : '',
+              memberColorRef === 'lime' ? 'bg-lime-900' : '',
+              memberColorRef === 'amber' ? 'bg-amber-900' : '',
+              !memberColorRef ? 'bg-gray-900' : '',
+              memberColorRef === 'gray' ? 'border-gray-900' : '',
+              mmemberColorRef === 'rose' ? 'border-rose-900' : '',
+              memberColorRef === 'fuchsia' ? 'border-fuchsia-900' : '',
+              memberColorRef === 'violet' ? 'border-violet-900' : '',
+              memberColorRef === 'cyan' ? 'border-cyan-900' : '',
+              memberColorRef === 'emerald' ? 'border-emerald-900' : '',
+              memberColorRef === 'lime' ? 'border-lime-900' : '',
+              memberColorRef === 'amber' ? 'border-amber-900' : '',
+              !memberColorRef ? 'border-gray-900' : '',
               'relative inline-flex p-1 pr-2 text-white transition ease-in border border-dashed rounded',
               !chooseCallbackRef ? 'focus:border-white group-hover:border-white' : '',
               member.id === 0 ? 'opacity-50' : ''
@@ -111,7 +128,15 @@
         :key="i"
         :class="[
           'h-10 flex-grow mr-1 transition transform cursor-pointer border-white border-2 shadow rounded',
-          `bg-${color}-900`,
+          color === 'gray' ? 'bg-gray-900' : '',
+          color === 'rose' ? 'bg-rose-900' : '',
+          color === 'fuchsia' ? 'bg-fuchsia-900' : '',
+          color === 'violet' ? 'bg-violet-900' : '',
+          color === 'cyan' ? 'bg-cyan-900' : '',
+          color === 'emerald' ? 'bg-emerald-900' : '',
+          color === 'lime' ? 'bg-lime-900' : '',
+          color === 'amber' ? 'bg-amber-900' : '',
+          !color ? 'bg-gray-900' : '',
           (color === member.color) ? 'scale-125 ml-1 mr-2' : 'scale-100 hover:scale-110'
         ]"
         @mouseover="colorHoverRef = color"

@@ -29,7 +29,15 @@
     </div>
     <div
       :class="[
-        `bg-${messageRef.member.color || 'gray'}-900`,
+        messageRef.member.color === 'gray' ? 'bg-gray-900' : '',
+        messageRef.member.color === 'rose' ? 'bg-rose-900' : '',
+        messageRef.member.color === 'fuchsia' ? 'bg-fuchsia-900' : '',
+        messageRef.member.color === 'violet' ? 'bg-violet-900' : '',
+        messageRef.member.color === 'cyan' ? 'bg-cyan-900' : '',
+        messageRef.member.color === 'emerald' ? 'bg-emerald-900' : '',
+        messageRef.member.color === 'lime' ? 'bg-lime-900' : '',
+        messageRef.member.color === 'amber' ? 'bg-amber-900' : '',
+        !messageRef.member.color ? 'bg-gray-900' : '',
         ' text-white rounded shadow ',
         messageRef.member.id === 0 ? 'opacity-50 p-1' : 'p-2',
       ]"
@@ -37,7 +45,15 @@
       <div
         v-if="messageRef.member"
         :class="[
-          `border-${messageRef.member.color || 'gray'}-900`,
+          messageRef.member.color === 'gray' ? 'border-gray-900' : '',
+          messageRef.member.color === 'rose' ? 'border-rose-900' : '',
+          messageRef.member.color === 'fuchsia' ? 'border-fuchsia-900' : '',
+          messageRef.member.color === 'violet' ? 'border-violet-900' : '',
+          messageRef.member.color === 'cyan' ? 'border-cyan-900' : '',
+          messageRef.member.color === 'emerald' ? 'border-emerald-900' : '',
+          messageRef.member.color === 'lime' ? 'border-lime-900' : '',
+          messageRef.member.color === 'amber' ? 'border-amber-900' : '',
+          !messageRef.member.color ? 'border-gray-900' : '',
           'text-xs font-bold text-white border cursor-pointer group text-opacity-70 hover:text-opacity-100 relative flex',
           messageRef.member.id === 1 ? 'justify-start flex-row-reverse' : '',
           messageRef.member.id === 0 ? 'justify-center' : '',
@@ -77,7 +93,15 @@
         </div>
         <div
           :class="[
-            `border-${messageRef.member.color || 'gray'}-900`,
+            messageRef.member.color === 'gray' ? 'border-gray-900' : '',
+            messageRef.member.color === 'rose' ? 'border-rose-900' : '',
+            messageRef.member.color === 'fuchsia' ? 'border-fuchsia-900' : '',
+            messageRef.member.color === 'violet' ? 'border-violet-900' : '',
+            messageRef.member.color === 'cyan' ? 'border-cyan-900' : '',
+            messageRef.member.color === 'emerald' ? 'border-emerald-900' : '',
+            messageRef.member.color === 'lime' ? 'border-lime-900' : '',
+            messageRef.member.color === 'amber' ? 'border-amber-900' : '',
+            !messageRef.member.color ? 'border-gray-900' : '',
             'w-full border border-dashed outline-none whitespace-pre-line break-word hover:border-gray-300 focus:border-white',
             !messageRef.member.id ? 'pl-5 pr-5 italic text-sm' : '' ,
             messageRef.member.id === 1 ? 'pl-5' : 'pr-5'
