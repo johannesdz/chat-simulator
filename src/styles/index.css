@@ -11,3 +11,13 @@
     @apply text-xl;
   }
 }
+
+/* *{
+  -webkit-user-modify:read-write;
+} */
+
+[contenteditable] {
+  -webkit-user-select: text;
+  user-select: text;
+  /* -webkit-user-modify:read-write; */
+}

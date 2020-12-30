@@ -4,7 +4,7 @@
       'flex group transition opacity-0 rounded',
       isVisibleRef ? 'opacity-100' : '',
       messageRef.member.id === 1 ? 'flex-row-reverse' : '',
-      messageRef.member.id === 0 ? 'pl-24 justify-center' : '',
+      messageRef.member.id === 0 ? 'pl-20 justify-center' : '',
       isDraggedRef ? 'invisible' : ''
     ]"
     :draggable="true"
@@ -108,15 +108,21 @@
             messageRef.member.color === 'lime' ? 'border-lime-900' : '',
             messageRef.member.color === 'amber' ? 'border-amber-900' : '',
             !messageRef.member.color ? 'border-gray-900' : '',
-            'w-full border border-dashed outline-none whitespace-pre-line break-word hover:border-gray-300 focus:border-white',
-            !messageRef.member.id ? 'pl-5 pr-5 italic text-sm' : '' ,
-            messageRef.member.id === 1 ? 'pl-5' : 'pr-5'
+            ' break-word w-full border border-dashed hover:border-gray-300 focus:border-white'
           ]"
-          role="textbox"
-          contenteditable
-          @input="handleTextInput($event)"
         >
-          {{ messageRef.text }}
+          <div
+            :class="[
+              'w-auto outline-none whitespace-pre-line break-word max-w-xs',
+              !messageRef.member.id ? 'pl-5 pr-5 italic text-sm' : '' ,
+              messageRef.member.id === 1 ? 'pl-5' : 'pr-5'
+            ]"
+            role="textbox"
+            contenteditable="true"
+            @blur="handleTextBlur($event)"
+          >
+            {{ messageRef.text }}
+          </div>
         </div>
       </div>
     </div>
@@ -142,7 +148,7 @@
     <div
       :class="[
         'items-center self-center justify-center p-2  transition transform opacity-0 cursor-pointer  hover:scale-125 hover:opacity-100 group-hover:opacity-100',
-        messageRef.member.id === 1 ? 'ml-5' : 'mr-5',
+        messageRef.member.id === 1 ? 'ml-1' : 'mr-1',
         removeMessageRef ? 'text-red-500' : ''
       ]"
       @click="handleRemoveMessage"
@@ -234,11 +240,10 @@ export default defineComponent({
       openMembersOverlay(chooseMemberCallback)
     }
 
-    const handleTextInput = (event: any) => {
+    const handleTextBlur = (event: any) => {
       const text: string = event.target.innerText
       if (text.length > maxLength) {
         event.target.innerText = text.substring(0, maxLength)
-        event.target.blur()
         return
       }
       messageRef.value.text = text
@@ -280,7 +285,7 @@ export default defineComponent({
       isVisibleRef,
       handleRemoveMessage,
       handleChooseMember,
-      handleTextInput,
+      handleTextBlur,
       startDrag,
       onDrop,
       isDragOverRef,

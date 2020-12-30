@@ -55,7 +55,7 @@
               !memberColorRef ? 'bg-gray-900' : '',
               memberColorRef === 'gray' ? 'border-gray-900' : '',
               memberColorRef === 'blueGray' ? 'border-blueGray-900' : '',
-              mmemberColorRef === 'rose' ? 'border-rose-900' : '',
+              memberColorRef === 'rose' ? 'border-rose-900' : '',
               memberColorRef === 'fuchsia' ? 'border-fuchsia-900' : '',
               memberColorRef === 'violet' ? 'border-violet-900' : '',
               memberColorRef === 'blue' ? 'border-blue-900' : '',
@@ -71,13 +71,15 @@
           >
             <span
               :class="[
-                'w-auto max-w-xs truncate outline-none sm:max-w-xs',
+                'w-auto max-w-xs truncate outline-none min-w-40px',
                 !chooseCallbackRef ? 'pr-5' : ''
               ]"
               role="textbox"
               :contenteditable="!chooseCallbackRef"
-              @input="handleNameInput($event)"
-            >{{ member.name }}</span>
+              @blur="handleNameInput($event)"
+            >
+              {{ member.name }}
+            </span>
             <div
               v-if="!chooseCallbackRef"
               class="absolute top-0 bottom-0 right-0 flex items-center justify-center pr-1 cursor-pointer"
@@ -198,7 +200,7 @@ export default defineComponent({
     const isMarkedForRemove = ref(false)
     const colorHoverRef = ref('')
     const memberRef: ComputedRef<Member> = computed(() => props.member)
-    const maxLength = 30
+    const maxLength = 25
 
     onMounted(() => {
       setTimeout(() => {
@@ -224,7 +226,6 @@ export default defineComponent({
       const name: string = event.target.innerText
       if (name.length > maxLength) {
         event.target.innerText = name.substring(0, maxLength)
-        event.target.blur()
         return
       }
       const member = memberRef.value

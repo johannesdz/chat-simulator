@@ -1,59 +1,62 @@
 <template>
   <div
     :class="[
-      'absolute inset-0 p-4 bg-gray-900 bg-opacity-60 rounded ',
-      'transition duration-700 opacity-0 pointer-events-none',
+      'fixed inset-0 z-20 p-4 bg-gray-900 opacity-0  bg-opacity-60 pointer-events-none transition duration-700',
       isOpenRef ? 'opacity-100 pointer-events-auto' : ''
     ]"
   >
-    <div class="flex flex-col h-full rounded shadow-xl">
-      <div class="flex items-center justify-between text-white bg-gray-700 rounded-t">
-        <div class="flex items-center p-2 font-bold">
-          <div class="p-2">
-            {{ chooseCallbackRef ? 'Select member' : 'Edit Members' }}
+    <div
+      class="flex items-center justify-between w-full h-full max-w-2xl mx-auto shadow-xl"
+    >
+      <div class="flex flex-col w-full h-full rounded shadow-xl">
+        <div class="flex items-center justify-between text-white bg-gray-700 rounded-t">
+          <div class="flex items-center p-2 font-bold">
+            <div class="p-2">
+              {{ chooseCallbackRef ? 'Select member' : 'Edit Members' }}
+            </div>
+            <div
+              v-if="chooseCallbackRef"
+              class="p-2 transition rounded-full cursor-pointer hover:bg-gray-400"
+              @click="handleEditClick"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              ><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" /></svg>
+            </div>
           </div>
           <div
-            v-if="chooseCallbackRef"
-            class="p-2 transition rounded-full cursor-pointer hover:bg-gray-400"
-            @click="handleEditClick"
+            class="p-4 cursor-pointer"
+            @click="handleCloseClick"
           >
             <svg
-              class="w-5 h-5"
-              fill="currentColor"
-              viewBox="0 0 20 20"
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
-            ><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" /></svg>
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            /></svg>
           </div>
         </div>
         <div
-          class="p-4 cursor-pointer"
-          @click="handleCloseClick"
+          ref="membersContainerRef"
+          class="flex-grow p-4 overflow-y-auto text-gray-900 bg-white"
         >
-          <svg
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          ><path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M6 18L18 6M6 6l12 12"
-          /></svg>
+          <ChatMembersItem
+            v-for="member in membersListRef"
+            :key="member.id"
+            :member="member"
+          />
         </div>
+        <ChatMembersInput @create="handleCreateMember" />
       </div>
-      <div
-        ref="membersContainerRef"
-        class="flex-grow p-4 overflow-y-auto text-gray-900 bg-white"
-      >
-        <ChatMembersItem
-          v-for="member in membersListRef"
-          :key="member.id"
-          :member="member"
-        />
-      </div>
-      <ChatMembersInput @create="handleCreateMember" />
     </div>
   </div>
 </template>

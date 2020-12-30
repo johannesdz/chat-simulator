@@ -1,5 +1,5 @@
-function scrollTo(element: HTMLElement, toValue: number, duration = 500, callback?: Function): void {
-  const start: number = element.scrollTop
+function scrollTo(toValue: number, element: HTMLElement | null = null, duration = 500, callback?: Function): void {
+  const start: number = element?.scrollTop || window.scrollY
   const change: number = toValue - start
   let currentTime = 0
   const increment = 20
@@ -17,7 +17,11 @@ function scrollTo(element: HTMLElement, toValue: number, duration = 500, callbac
     currentTime += increment
     const val = easeInOutQuad(currentTime, start, change, duration)
 
-    element.scrollTop = val
+    if (element) {
+      element.scrollTop = val
+    } else {
+      window.scrollTo(0, val)
+    }
     if (currentTime < duration) {
       setTimeout(animateScroll, increment)
     } else if (callback !== undefined) {
@@ -28,7 +32,7 @@ function scrollTo(element: HTMLElement, toValue: number, duration = 500, callbac
   animateScroll()
 }
 
-export function scrollToBottom(element: HTMLElement): void {
-  const elementHeight = element.scrollHeight
-  scrollTo(element, elementHeight)
+export function scrollToBottom(element?: HTMLElement): void {
+  const elementHeight = (element || document.body).scrollHeight
+  scrollTo(elementHeight, element)
 }

@@ -1,7 +1,7 @@
 <template>
   <ImageUploadWrapper
     :class="[
-      'border-2 border-dashed rounded-t absolute bottom-0 left-0 right-0 bg-gray-700',
+      'border-2 border-dashed',
       isDragRef ? 'border-gray-400' : 'border-gray-700'
     ]"
     :open-file-upload="openFileUploadRef"
@@ -10,7 +10,7 @@
     @load="handleImageLoad"
   >
     <form
-      class="p-2"
+      class="w-full p-2"
       @submit="handleCreateMessage"
     >
       <div class="flex items-center justify-center h-full">

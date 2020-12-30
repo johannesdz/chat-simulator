@@ -1,7 +1,7 @@
 <template>
   <form
     :class="[
-      'border-2 border-dashed',
+      'border-2 border-dashed w-full',
       {'image-upload--loading': isLoading},
       {'image-upload--uploaded': isUploaded}
     ]"
