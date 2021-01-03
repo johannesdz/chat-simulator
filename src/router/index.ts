@@ -1,22 +1,29 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
-import Home from '../views/Home.vue'
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
+import Home from '@/views/Home.vue'
+// import Simulator from '@/views/Simulator.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/simulator',
+    name: 'Simulator',
+    component: () => import(/* webpackChunkName: "simulator" */ '@/views/Simulator.vue')
+    // component: Simulator
+  },
+  {
+    path: '/year',
+    name: 'Year',
+    component: () => import(/* webpackChunkName: "year" */ '@/views/examples/Year.vue')
+    // component: Simulator
   }
-  // todo
-  // {
-  //   path: '/members',
-  //   name: 'Members',
-  //   component: () => import(/* webpackChunkName: "members" */ '../views/Members.vue')
-  // }
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes
 })
 
