@@ -21,6 +21,7 @@
       Example of the chat simulator
     </h2>
     <iframe
+      title="Example of the chat simulator"
       src="/year"
       width="100%"
       style="height: 500px;"
@@ -33,6 +34,7 @@
       This is a private project to try out some new web-technologies like Vue3 with Composition api, Tailwindcss, Typescript and newer browser features (drag and drop, image handling).
       Feel free to check out the code on <a
         class="underline hover:no-underline"
+        rel="noreferrer"
         href="https://github.com/johannesdz/chat-simulator"
         target="_blank"
       >GitHub</a>. Also i think its quiet useful to set up a quick chat conversation to prank or surprise somebody;-)
