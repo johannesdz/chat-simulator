@@ -1,20 +1,22 @@
 <template>
-  <div class="min-h-screen bg-chat-background">
-    <div class="fixed top-0 left-0 right-0 z-10 text-white bg-gray-700">
-      <div class="flex items-center justify-between max-w-2xl mx-auto shadow-xl">
+  <div class="min-h-screen bg-gray-50">
+    <div class="fixed top-0 left-0 right-0 z-10 ">
+      <div class="flex items-center justify-between max-w-2xl mx-auto text-white bg-gray-700 shadow-xl">
         <ChatHeader />
         <ChatPlayer />
       </div>
     </div>
-    <div class="relative flex flex-col w-full h-full py-16 text-white">
-      <div class="flex items-center justify-between max-w-2xl mx-auto">
-        <ChatMessages
-          @messageMounted="handleCreateMessage"
-        />
+    <div class="relative flex flex-col w-full min-h-screen text-white ">
+      <div class="flex justify-between w-full max-w-2xl min-h-screen mx-auto border border-gray-700 shadow-xl bg-chat-background">
+        <div class="w-full py-16">
+          <ChatMessages
+            @messageMounted="handleCreateMessage"
+          />
+        </div>
       </div>
     </div>
-    <div class="fixed bottom-0 left-0 right-0 text-white bg-gray-700">
-      <div class="flex items-center justify-between max-w-2xl mx-auto shadow-xl">
+    <div class="fixed bottom-0 left-0 right-0">
+      <div class="flex items-center justify-between max-w-2xl mx-auto text-white bg-gray-700 shadow-xl">
         <ChatInput
           @create="handleCreateMessage"
         />
