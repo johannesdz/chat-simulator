@@ -94,7 +94,14 @@
     <h2 class="mt-10 mb-6 text-4xl">
       Need more information?
     </h2>
-    <p>Feel free to contact me on info@chat-simulator.com</p>
+    <p>
+      Feel free to contact me on info@chat-simulator.com or <a
+        class="underline hover:no-underline"
+        rel="noreferrer"
+        href="https://github.com/johannesdz/chat-simulator"
+        target="_blank"
+      >GitHub</a>
+    </p>
   </div>
 </template>
 

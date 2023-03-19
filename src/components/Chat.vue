@@ -15,7 +15,7 @@
         </div>
       </div>
     </div>
-    <div class="fixed bottom-0 left-0 right-0">
+    <div class="fixed bottom-0 left-0 right-0 z-10">
       <div class="flex items-center justify-between max-w-2xl mx-auto text-white bg-gray-700 shadow-xl">
         <ChatInput
           @create="handleCreateMessage"
